@@ -11,11 +11,6 @@ def atm_operation(balance: int, action: str, amount: int) -> int:
             print("Mablag' yetarli emas!")
             return balance
     return balance
+print(atm_operation(100000, "deposit", 50000)) # 150000
 
-balans = int(input("Balansni kiriting: "))
-amal = input("Amalni tanlang (deposit/withdraw): ")
-summa = int(input("Summani kiriting: "))
-
-yangi_balans = atm_operation(balans, amal, summa)
-
-print(f"Amal bajarildi. Joriy balans: {yangi_balans}")
+print(atm_operation(100000, "withdraw", 20000)) # 80000

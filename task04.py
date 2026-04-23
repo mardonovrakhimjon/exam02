@@ -7,4 +7,3 @@ def format_name(full_name: str) -> str:
     return f"{ism_sharif}, {familiya}"
 
 print(format_name("Aliyev Vali G'aniyevich")) 
-

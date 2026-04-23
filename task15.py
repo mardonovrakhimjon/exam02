@@ -12,5 +12,6 @@ def find_top_students(grades: dict) -> dict:
     }
 
 print(find_top_students({"Ali": 5, "Vali": 4, "Hasan": 3, "Husan": 5}))
-
+# {"max_grade": 5, "students": ["Ali", "Husan"]}
 print(find_top_students({"Aziz": 4, "Bobur": 5, "Diyor": 3}))
+# {"max_grade": 5, "students": ["Bobur"]}

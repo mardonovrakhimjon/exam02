@@ -1,27 +1,33 @@
-def analyze_list(items):
+def analyze_list(items: list) -> dict:
     total = len(items)
-
-    unique_elements = set(items)
-    unique_count = len(unique_elements)
     
-    duplicates = []
-    most_common = None
-    max_count = 0
-    
-    for item in unique_elements:
-        count = items.count(item)
-        if count > 1:
-            duplicates.append(item)
+    report = {}
+    for item in items:
+        report[item] = items.count(item)
         
-        if count > max_count:
-            max_count = count
+    unique = 0
+    duplicates = []
+    most_common = items[0]
+    for item in report:
+        if report[item] == 1:
+            unique += 1
+        else:
+            duplicates.append(item)
+
+        if report[item] > report[most_common]:
             most_common = item
-            
+
     return {
         "total": total,
-        "unique": unique_count,
+        "unique": unique,
         "duplicates": duplicates,
         "most_common": most_common
     }
     
 print(analyze_list(["Ali", "Vali", "Ali", 1, 2, 1]))
+# {
+#   "total": 6,
+#   "unique": 4,
+#   "duplicates": ["Ali", 1],
+#   "most_common": "Ali"
+# }
